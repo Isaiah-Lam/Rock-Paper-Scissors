@@ -15,12 +15,12 @@
             <div class="score-flex">
                 <p>YOU:</p>
                 <div id="p1"></div>
-                <p>0</p>
+                <p id="playerScore">0</p>
             </div>
             <div class="score-flex">
                 <p style="margin-right: 8.5px;">CPU:</p>
                 <div id="p2"></div>
-                <p>0</p>
+                <p id="cpuScore">0</p>
             </div>
         </div>
 
@@ -33,13 +33,15 @@
                     <th>Scissors</th>
                 </tr>
                 <tr>
-                    <td><img src="imgs/rock.png" alt="Rock" id="rock" class="img-btn"></td>
-                    <td><img src="imgs/paper.png" alt="Paper" id="paper" class="img-btn"></td>
-                    <td><img src="imgs/scissors.png" alt="Scissors" id="scissors" class="img-btn"></td>
+                    <td><img src="imgs/rock.png" alt="Rock" id="rock" class="img-btn" onclick="game('rock')"></td>
+                    <td><img src="imgs/paper.png" alt="Paper" id="paper" class="img-btn" onclick="game('paper')"></td>
+                    <td><img src="imgs/scissors.png" alt="Scissors" id="scissors" class="img-btn" onclick="game('scissors')"></td>
                 </tr>
             </table>
         </div>
 
     </body>
+
+    <script src="rps.js"></script>
 
 </html>
