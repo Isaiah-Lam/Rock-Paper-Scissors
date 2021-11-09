@@ -6,5 +6,40 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
+    <body>
+
+        <h1 style="margin: 25px auto; width: fit-content;">Rock, Paper, Scissors!</h1>
+        
+        <div id="scores">
+            <h3 style="margin: 5px auto; width: fit-content;">Score:</h3>
+            <div class="score-flex">
+                <p>YOU:</p>
+                <div id="p1"></div>
+                <p>0</p>
+            </div>
+            <div class="score-flex">
+                <p style="margin-right: 8.5px;">CPU:</p>
+                <div id="p2"></div>
+                <p>0</p>
+            </div>
+        </div>
+
+        <div id="options">
+            <h2 style="margin: 0px auto 50px auto; width: fit-content;"><u>Choose an option:</u></h2>
+            <table id="buttons">
+                <tr>
+                    <th>Rock</th>
+                    <th>Paper</th>
+                    <th>Scissors</th>
+                </tr>
+                <tr>
+                    <td><img src="imgs/rock.png" alt="Rock" id="rock" class="img-btn"></td>
+                    <td><img src="imgs/paper.png" alt="Paper" id="paper" class="img-btn"></td>
+                    <td><img src="imgs/scissors.png" alt="Scissors" id="scissors" class="img-btn"></td>
+                </tr>
+            </table>
+        </div>
+
+    </body>
 
 </html>
