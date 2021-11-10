@@ -60,3 +60,6 @@ body {
     border-collapse: separate;
     border-spacing: 15px;
 }
+td {
+    float: left;
+}
