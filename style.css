@@ -45,7 +45,6 @@ body {
 }
 #buttons {
     margin: 0 auto;
-    overflow: hidden;
 }
 .img-btn {
     width: 200px;
@@ -60,6 +59,33 @@ body {
     border-collapse: separate;
     border-spacing: 15px;
 }
-td {
-    float: left;
+#animation {
+    display: none;
+    text-align: center;
+}
+#animation-contents {
+    display: flex;
+    justify-content: center;
+}
+.animated-circle {
+    height: 175px;
+    width: 175px;
+    background-position: center;
+    background-size: 120%;
+    border-radius: 100px;
+}
+.empty {
+    display: none;
+    height: 75px;
+}
+.animated-text {
+    display: none;
+}
+#animated-text-div {
+    width: 150px;
+    text-align: center;
+    margin: 25px 75px;
+}
+#animated-cpu {
+    background-image: url("imgs/question_mark.png");
 }
