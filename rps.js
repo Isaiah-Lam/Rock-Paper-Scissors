@@ -46,7 +46,6 @@ function animation(p,c) {
     let pUrl = "url(imgs/" + p + ".png)";
     let cUrl = "url(imgs/" + c + ".png)";
     $("#animated-player").css("background-image", pUrl);
-    $("#scores").css("margin-bottom", "150px");
     $("#animation").delay(500).fadeIn(500);
 
     $(".empty").delay(250).slideDown(500);
@@ -64,6 +63,7 @@ function animation(p,c) {
     $(".empty").delay(250).slideDown(500);
     $("#animated-cpu").delay(4250).queue(function () {
         $(this).css("background-image", cUrl);
+        $(this).dequeue();
     });
     $("#shoot-text").delay(4000).fadeIn(500);
 
@@ -101,13 +101,24 @@ function game(player) {
         $('#playerScore').text(playerScore);
         $('#cpuScore').text(cpuScore);
         $('#ties').text(ties);
-        $(this).delay(1500).queue(function () {
-            reset();
-        });
-    });
 
+        resetGame();
+
+        $(this).dequeue();
+
+    });
 }
 
-function reset() {
-
+function resetGame() {
+    $("#animation").delay(1500).fadeOut();
+    $("#rock-text").delay(1500).fadeOut();
+    $("#paper-text").delay(1500).fadeOut();
+    $("#scissors-text").delay(1500).fadeOut();
+    $("#shoot-text").delay(1500).fadeOut();
+    $("#animated-cpu").delay(1500).queue(function () {
+        $(this).css("background-image", "url(imgs/question_mark.png)");
+        $(this).dequeue();
+    });
+    $(".empty").delay(1500).slideUp();
+    $("#options").delay(1500).fadeIn();
 }
