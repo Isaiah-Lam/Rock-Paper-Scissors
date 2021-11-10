@@ -1,6 +1,7 @@
 var choices = ['rock', 'paper', 'scissors'];
 playerScore = 0;
 cpuScore = 0;
+ties = 0;
 
 function checkWin(p,c) {
     if (p == "rock") {
@@ -45,26 +46,25 @@ function game(player) {
     let winner = checkWin(player, cpu);
 
     if (winner == "tie") {
-        // display tie message
+        ties++;
+        document.getElementById('ties').innerHTML = ties;
+    }
+    else if (winner == "player") {
+        playerScore++;
+        document.getElementById('playerScore').innerHTML = playerScore;
+    }
+    else if (winner == "cpu") {
+        cpuScore++;
+        document.getElementById('cpuScore').innerHTML = cpuScore;
     }
 
-    else {
-        if (winner == "player") {
-            playerScore++;
-            document.getElementById('playerScore').innerHTML = playerScore;
-        }
-        else if (winner == "cpu") {
-            cpuScore++;
-            document.getElementById('cpuScore').innerHTML = cpuScore;
-        }
-
-        let total = playerScore + cpuScore;
-        let p1Width = Math.round((playerScore/total)*10000) / 100
-        let p2Width = 100 - p1Width
-        document.getElementById('p1').style.width = p1Width + "%";
-        document.getElementById('p2').style.width = p2Width + "%";
-
-    }
+    let total = playerScore + cpuScore + ties;
+    let p1Width = Math.round((playerScore/total)*10000) / 100;
+    let p2Width = Math.round((cpuScore/total)*10000) / 100;
+    let tieWidth = 100 - (p1Width + p2Width);
+    document.getElementById('s1').style.width = p1Width + "%";
+    document.getElementById('s2').style.width = p2Width + "%";
+    document.getElementById('s3').style.width = tieWidth + "%";
     
     
 }
