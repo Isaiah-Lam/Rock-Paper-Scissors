@@ -49,10 +49,10 @@ body {
 .img-btn {
     width: 200px;
     height: 200px;
-    -webkit-filter: brightness(100%);
+    filter: brightness(100%);
 }
 .img-btn:hover {
-    -webkit-filter: brightness(70%);
+    filter: brightness(70%);
     transition: all 0.3s ease;
 }
 #buttons {
